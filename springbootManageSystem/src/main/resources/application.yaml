@@ -1,10 +1,11 @@
 # 应用名称
 spring:
-  application:
-    name: springbootManageSystem
-
+  datasource:
+    url: jdbc:mysql://localhost:3306/springboot_vue_manage?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
 # 应用服务 WEB 访问端口
 server:
   port: 9090
-
 
