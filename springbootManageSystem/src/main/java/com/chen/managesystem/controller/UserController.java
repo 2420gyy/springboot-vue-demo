@@ -1,14 +1,13 @@
 package com.chen.managesystem.controller;
 
 
-import com.chen.managesystem.config.Result;
+import com.chen.managesystem.common.Result;
 import com.chen.managesystem.entity.User;
-import com.chen.managesystem.service.UserService;
+import com.chen.managesystem.service.IUserService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -27,7 +26,7 @@ public class UserController {
 
 
     @Resource
-    private UserService userService;
+    private IUserService userService;
 
     @PostMapping("/savaUser")
     public Result savaUser(@RequestBody User user){

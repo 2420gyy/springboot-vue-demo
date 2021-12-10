@@ -1,4 +1,4 @@
-package com.chen.managesystem.config;
+package com.chen.managesystem.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

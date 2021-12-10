@@ -1,10 +1,16 @@
 package com.chen.managesystem.entity;
 
-import java.io.Serializable;
-import java.time.LocalDateTime;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -14,53 +20,76 @@ import lombok.Data;
  * @author chenchen
  * @since 2021-12-10
  */
-@Data
+@Getter
+@Setter
+@TableName("user")
 @ApiModel(value = "User对象", description = "")
 public class User implements Serializable {
 
+    private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty(value = "uuid")
-    private String ID;
+    @ApiModelProperty("uuid")
+    @TableId("ID")
+    private String id;
 
-    private String NAME;
+    @TableField("NAME")
+    private String name;
 
-    private Integer AGE;
+    @TableField("AGE")
+    private Integer age;
 
-    @ApiModelProperty(value = "0 女，1 男")
-    private Integer GENDER;
+    @ApiModelProperty("0 女，1 男")
+    @TableField("GENDER")
+    private Integer gender;
 
-    private String NICK_NAME;
+    @TableField("NICK_NAME")
+    private String nickName;
 
-    private String PASSWORD;
+    @TableField("PASSWORD")
+    private String password;
 
-    private String PHONE;
+    @TableField("PHONE")
+    private String phone;
 
-    private String EMAIL;
+    @TableField("EMAIL")
+    private String email;
 
-    @ApiModelProperty(value = "是否管理员 0非，1是")
-    private Integer IS_ADMIN;
+    @ApiModelProperty("是否管理员 0非，1是")
+    @TableField("IS_ADMIN")
+    private Integer isAdmin;
 
-    @ApiModelProperty(value = "VIP状态 0非vip，1vip")
-    private Integer IS_VIP;
+    @ApiModelProperty("VIP状态 0非vip，1vip")
+    @TableField("IS_VIP")
+    private Integer isVip;
 
-    @ApiModelProperty(value = "删除状态 0未删除，1删除")
-    private Integer IS_DELETE;
+    @ApiModelProperty("删除状态 0未删除，1删除")
+    @TableField("IS_DELETE")
+    @TableLogic
+    private Integer isDelete;
 
-    @ApiModelProperty(value = "创建者")
-    private String CREATE_USER;
+    @ApiModelProperty("创建者")
+    @TableField("CREATE_USER")
+    private String createUser;
 
-    @ApiModelProperty(value = "创建时间")
-    private LocalDateTime CREATE_TIME;
+    @ApiModelProperty("创建时间")
+    @TableField("CREATE_TIME")
+    private LocalDateTime createTime;
 
-    @ApiModelProperty(value = "删除人")
-    private String DELETE_USER;
+    @ApiModelProperty("删除人")
+    @TableField("DELETE_USER")
+    private String deleteUser;
 
-    @ApiModelProperty(value = "更新时间")
-    private LocalDateTime UPDATE_TIME;
+    @ApiModelProperty("更新时间")
+    @TableField("UPDATE_TIME")
+    private LocalDateTime updateTime;
 
-    @ApiModelProperty(value = "更新者")
-    private String UPDATE_USER;
+    @ApiModelProperty("更新者")
+    @TableField("UPDATE_USER")
+    private String updateUser;
 
-    @ApiModelProperty(value = "删除时间")
-    private LocalDateTime DELETE_TIME;
+    @ApiModelProperty("删除时间")
+    @TableField("DELETE_TIME")
+    private LocalDateTime deleteTime;
+
+
 }

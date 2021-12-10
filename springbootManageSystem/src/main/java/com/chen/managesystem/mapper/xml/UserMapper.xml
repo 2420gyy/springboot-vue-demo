@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chen.managesystem.user.mapper.UserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.chen.managesystem.user.entity.User">
+        <id column="ID" property="id" />
+        <result column="NAME" property="name" />
+        <result column="AGE" property="age" />
+        <result column="GENDER" property="gender" />
+        <result column="NICK_NAME" property="nickName" />
+        <result column="PASSWORD" property="password" />
+        <result column="PHONE" property="phone" />
+        <result column="EMAIL" property="email" />
+        <result column="IS_ADMIN" property="isAdmin" />
+        <result column="IS_VIP" property="isVip" />
+        <result column="IS_DELETE" property="isDelete" />
+        <result column="CREATE_USER" property="createUser" />
+        <result column="CREATE_TIME" property="createTime" />
+        <result column="DELETE_USER" property="deleteUser" />
+        <result column="UPDATE_TIME" property="updateTime" />
+        <result column="UPDATE_USER" property="updateUser" />
+        <result column="DELETE_TIME" property="deleteTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, NAME, AGE, GENDER, NICK_NAME, PASSWORD, PHONE, EMAIL, IS_ADMIN, IS_VIP, IS_DELETE, CREATE_USER, CREATE_TIME, DELETE_USER, UPDATE_TIME, UPDATE_USER, DELETE_TIME
+    </sql>
+
+</mapper>

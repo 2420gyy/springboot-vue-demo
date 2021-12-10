@@ -1,12 +1,14 @@
 package com.chen.generator;
 
+import com.baomidou.mybatisplus.generator.FastAutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
+import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import org.junit.jupiter.api.Test;
 
 
 //https://github.com/baomidou/generator
 //一堆东西。。。
-public class FastAutoGeneratorTest {
+public class FastAutoGeneratorTest{
 
     /**
      * 数据源配置
@@ -31,7 +33,19 @@ public class FastAutoGeneratorTest {
                 })
                 // 策略配置
                 .strategyConfig(builder -> {
-                    builder.addInclude("user");
+                    builder.addInclude("user")
+                            .entityBuilder()
+                            .enableLombok()
+                            .naming(NamingStrategy.underline_to_camel)
+                            .logicDeleteColumnName("IS_DELETE")
+                            .enableTableFieldAnnotation()
+                            .controllerBuilder()
+                            .enableRestStyle()
+                            .mapperBuilder()
+                            .enableMapperAnnotation()
+                            .enableBaseColumnList()
+                            .enableBaseResultMap();
+
                 })
                 .execute();
     }
