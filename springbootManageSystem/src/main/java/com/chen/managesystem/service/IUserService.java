@@ -1,5 +1,6 @@
 package com.chen.managesystem.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.chen.managesystem.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IUserService extends IService<User> {
 
+    Page<User> findUser(Integer pageNum, Integer pageSize, String search);
 }

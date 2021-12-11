@@ -8,4 +8,12 @@ spring:
 # 应用服务 WEB 访问端口
 server:
   port: 9090
+mybatis:
+  type-aliases-package: com.chen.managesystem.entity
+  mapper-locations: com.chen.managesystem.mapper
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
+file:
+  ip: localhost

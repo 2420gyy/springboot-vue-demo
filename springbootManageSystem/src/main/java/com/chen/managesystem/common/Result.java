@@ -26,6 +26,7 @@ public class Result<T> {
         Result<T> result = new Result<>();
         result.setCode("0");
         result.setMsg("success");
+        result.setData(data);
         return result;
     }
     public static Result error(String code,String msg){

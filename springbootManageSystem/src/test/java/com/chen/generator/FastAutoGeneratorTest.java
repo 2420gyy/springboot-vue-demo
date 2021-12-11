@@ -28,16 +28,16 @@ public class FastAutoGeneratorTest{
                 })
                 // 包配置
                 .packageConfig(builder -> {
-                    builder.moduleName("user")
+                    builder.moduleName("course")
                             .parent("com.chen.managesystem");
                 })
                 // 策略配置
                 .strategyConfig(builder -> {
-                    builder.addInclude("user")
+                    builder.addInclude("course")
                             .entityBuilder()
                             .enableLombok()
                             .naming(NamingStrategy.underline_to_camel)
-                            .logicDeleteColumnName("IS_DELETE")
+                            // .logicDeleteColumnName("IS_DELETE")
                             .enableTableFieldAnnotation()
                             .controllerBuilder()
                             .enableRestStyle()

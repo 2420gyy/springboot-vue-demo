@@ -1,4 +1,4 @@
-package com.chen.managesystem.config;
+package com.chen.managesystem.common.config;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;

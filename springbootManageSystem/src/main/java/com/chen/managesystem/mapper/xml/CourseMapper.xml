@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chen.managesystem.mapper.CourseMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.chen.managesystem.entity.Course">
+        <id column="ID" property="id" />
+        <result column="NAME" property="name" />
+        <result column="PRICE" property="price" />
+        <result column="AUTHOR" property="author" />
+        <result column="CREATE_TIME" property="createTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, NAME, PRICE, AUTHOR, CREATE_TIME
+    </sql>
+
+</mapper>

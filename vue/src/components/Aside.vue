@@ -2,25 +2,26 @@
   <div>
     <el-menu
         style="width: 200px; min-height: calc(100vh - 50px)"
-        default-active="2"
+        default-active="path"
+        router
         class="el-menu-vertical-demo">
 <!--        :collapse="isCollapse"-->
 <!--        @open="handleOpen"-->
 <!--        @close="handleClose"-->
 
-      <el-menu-item index="1">
-        <el-icon><icon-menu /></el-icon>
+      <el-menu-item index="/user">
+        <el-icon><avatar /></el-icon>
         <template #title>用户管理</template>
       </el-menu-item>
-      <el-menu-item index="2">
+      <el-menu-item index="/course">
         <el-icon><icon-menu /></el-icon>
         <template #title>课程管理</template>
       </el-menu-item>
-      <el-menu-item index="3">
+      <el-menu-item index="/money">
         <el-icon><document /></el-icon>
         <template #title>收益信息</template>
       </el-menu-item>
-      <el-menu-item index="4">
+      <el-menu-item index="/other">
         <el-icon><setting /></el-icon>
         <template #title>其他</template>
       </el-menu-item>
@@ -35,7 +36,7 @@
 <script>
 import { defineComponent, ref } from 'vue'
 import {
-  Location,
+  Avatar,
   Document,
   Menu as IconMenu,
   Setting,
@@ -44,10 +45,15 @@ import {
 export default defineComponent({
   name: "Aside",
   components: {
-    Location,
+    Avatar,
     Document,
     Setting,
     IconMenu,
+  },
+  data (){
+    return {
+      path: this.$route.path
+    }
   },
   setup() {
     const isCollapse = ref(true)

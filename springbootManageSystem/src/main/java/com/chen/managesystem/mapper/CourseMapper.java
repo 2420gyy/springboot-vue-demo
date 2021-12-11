@@ -1,6 +1,6 @@
 package com.chen.managesystem.mapper;
 
-import com.chen.managesystem.entity.User;
+import com.chen.managesystem.entity.Course;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -10,9 +10,9 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author chenchen
- * @since 2021-12-10
+ * @since 2021-12-11
  */
 @Mapper
-public interface UserMapper extends BaseMapper<User> {
+public interface CourseMapper extends BaseMapper<Course> {
 
 }
